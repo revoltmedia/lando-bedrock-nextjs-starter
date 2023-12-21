@@ -66,3 +66,8 @@ Many S3 compatible plugins exist for WP. While it has drawbacks, it's a good ide
       # Define the base bucket URL (without trailing slash)
       S3_UPLOADS_BUCKET_URL='https://s3.us-west-2.amazonaws.com/xxxx'
       ```
+
+
+## About this Repo
+
+This was starter project was up by [bear](https://github.com/chaoticbear) for [Revolt Media](https://github.com/revoltmedia) as a tool to spin up relevant projects faster. Please don't expect regular updates, and feel free to use it as a starting point.
