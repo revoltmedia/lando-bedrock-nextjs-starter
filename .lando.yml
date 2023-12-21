@@ -1,0 +1,18 @@
+name: lando-bedrock
+recipe: wordpress
+proxy:
+  pma:
+    - pma.lando-bedrock.lndo.site
+env_file:
+  - .env
+config:
+  webroot: web
+services:
+  appserver:
+    type: php:8.2
+  pma:
+    type: phpmyadmin
+    hosts: database
+  database:
+    type: mariadb
+    portforward: true

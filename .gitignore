@@ -1,0 +1,9 @@
+# Dotenv
+.env
+.env.*
+!*.example
+
+# Logs
+*.log
+
+*.code-workspace
