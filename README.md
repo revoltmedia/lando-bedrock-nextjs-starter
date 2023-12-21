@@ -27,3 +27,42 @@ A starter with Lando & Bedrock configured to work together.
 
   * `wp-admin` is under `/wp/` at `https://lando-bedrock.lndo.site/wp/wp-admin`
   * `composer ...` commands can be run via `lando composer ...`
+
+
+## Suggestions
+
+### Use S3 File Uploads
+
+Many S3 compatible plugins exist for WP. While it has drawbacks, it's a good idea to do something like this to separate the file uploads from the core code. The [S3-Uploads](https://github.com/humanmade/S3-Uploads) plugin is great for use with Bedrock / composer.
+
+  * Their install steps can be used modifying them to `lando composer ...` or `lando wp ...`
+  * Their `wp-config.php` lines should be placed in `config/applicaton.php`
+    * Change `define` to `Config::define`
+    * Replace the values with environment variables `env('S3_UPLOADS_BUCKET')` 
+      ```
+      /**
+       * S3 Uploads Plugin settings
+       */
+
+      Config::define( 'S3_UPLOADS_BUCKET', env('S3_UPLOADS_BUCKET') );
+      // The s3 bucket region (excluding the rest of the URL)
+      Config::define( 'S3_UPLOADS_REGION', env('S3_UPLOADS_REGION') );
+
+      // You can set key and secret directly:
+      Config::define( 'S3_UPLOADS_KEY', env('S3_UPLOADS_KEY') );
+      Config::define( 'S3_UPLOADS_SECRET', env('S3_UPLOADS_SECRET') );
+
+      // Define the base bucket URL (without trailing slash)
+      Config::define( 'S3_UPLOADS_BUCKET_URL', env('S3_UPLOADS_BUCKET_URL') );
+      ```
+
+    * Don't forget to add those variables to the `.env` file
+      ```
+      # S3 Uploads Bucket Config
+      S3_UPLOADS_KEY='xxxx'
+      S3_UPLOADS_SECRET='xxxx'
+      S3_UPLOADS_BUCKET='xxxx'
+      S3_UPLOADS_REGION='us-west-2'
+      # Define the base bucket URL (without trailing slash)
+      S3_UPLOADS_BUCKET_URL='https://s3.us-west-2.amazonaws.com/xxxx'
+      ```
