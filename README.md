@@ -1,6 +1,8 @@
-# Lando-Bedrock Starter
+# Lando-Bedrock-NextJS Starter
 
-A starter with Lando & Bedrock configured to work together.
+A starter with Lando, Bedrock & NextJS configured to work together as a static generated site with WordPress backend. 
+
+Forked from [lando-bedrock-starter](https://github.com/revoltmedia/lando-bedrock-starter) with additional configuration for a NextJS frontend.
 
 ## Getting Started
 
