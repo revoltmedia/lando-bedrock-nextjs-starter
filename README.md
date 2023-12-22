@@ -29,6 +29,17 @@ A starter with Lando & Bedrock configured to work together.
   * `wp-admin` is under `/wp/` at `https://lando-bedrock.lndo.site/wp/wp-admin`
   * `composer ...` commands can be run via `lando composer ...`
 
+## What did you do here?
+
+ 1. Setup a `.lando.yml` config with some settings defined explicitly including some configs and env vars that are mostly personal taste.
+ 2. Initialization of Bedrock via `lando composer create-project roots/bedrock`
+ 3. Wrote this README with steps and tips.
+
+## References & Inspiration
+
+ * [Bedrock Installation](https://roots.io/bedrock/docs/installation/)
+ * [Bedrock with Lando](https://roots.io/bedrock/docs/bedrock-with-lando/)
+ * [S3-Uploads](https://github.com/humanmade/S3-Uploads)
 
 ## Suggestions
 
