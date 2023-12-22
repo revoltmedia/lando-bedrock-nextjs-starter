@@ -36,7 +36,7 @@ Note that this will remove the `init-backend` tooling.
 
 ## Notes
 
-  * `wp-admin` is under `/wp/` at `https://lando-bedrock.lndo.site/wp/wp-admin`
+  * `wp-admin` is under `/wp/` at `https://lando-bedrock-nextjs.lndo.site/wp/wp-admin`
   * `composer ...` commands can be run via `lando composer ...`
 
 ## What did you do here?

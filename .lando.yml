@@ -1,8 +1,8 @@
-name: lando-bedrock
+name: lando-bedrock-nextjs
 recipe: wordpress
 proxy:
   pma:
-    - pma.lando-bedrock.lndo.site
+    - pma.lando-bedrock-nextjs.lndo.site
 env_file:
   - .env
 config:
