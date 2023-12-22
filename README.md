@@ -20,8 +20,9 @@ A starter with Lando & Bedrock configured to work together.
       * `name`
       * `proxy`: `pma` URL subdomain
     * `.env` `WP_HOME` URL subdomain
- 4. Run `lando start`
- 5. Access your local instance at the URL provided after the start command finishes.
+ 4. Add a theme! For example, `twentytwentyfour` via composer that looks like `lando composer require wpackagist-theme/twentytwentyfour`
+ 5. Run `lando start`
+ 6. Access your local instance at the URL provided after the start command finishes.
 
  ## Notes
 
