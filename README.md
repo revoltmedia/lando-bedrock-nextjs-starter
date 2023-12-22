@@ -45,6 +45,17 @@ Note that this will remove the `init-backend` tooling.
  2. Initialization of Bedrock via `lando composer create-project roots/bedrock`
  3. Wrote this README with steps and tips.
 
+## Todo
+
+ - [ ] Setup initial NextJS project
+ - [ ] Create/Add blank theme placeholder for NextJS site
+ - [ ] Add basic plugins neeeded to connect NextJS
+    * WP-GraphQL
+ - [ ] Add connection config to NextJS to get data
+ - [ ] Create/Add React blocks plugin based on:
+        https://medium.com/geekculture/headless-wordpress-gutenberg-next-js-part-1-3-creating-a-block-with-react-e8d69e8460d4
+ - [ ] Create/Add "S3 Uploads for Bedrock" plugin
+
 ## References & Inspiration
 
  * [Bedrock Installation](https://roots.io/bedrock/docs/installation/)
