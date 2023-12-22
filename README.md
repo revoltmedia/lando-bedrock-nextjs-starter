@@ -82,4 +82,4 @@ Many S3 compatible plugins exist for WP. While it has drawbacks, it's a good ide
 
 ## About this Repo
 
-This was starter project was up by [bear](https://github.com/chaoticbear) for [Revolt Media](https://github.com/revoltmedia) as a tool to spin up relevant projects faster. Please don't expect regular updates, and feel free to use it as a starting point.
+This starter project was created by [bear](https://github.com/chaoticbear) for [Revolt Media](https://github.com/revoltmedia). It is a tool to spin up relevant projects faster. Please don't expect regular updates, and feel free to use it as a starting point.
