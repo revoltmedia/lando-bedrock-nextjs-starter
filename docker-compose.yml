@@ -1,0 +1,38 @@
+version: "3.5"
+
+x-shared-config:
+  base: &base
+    env_file:
+      - .env
+      - .env.local
+    user: "1000:1001"
+
+  node_image: &node_image
+    build:
+      context: ./frontend
+      dockerfile: ../docker/Dockerfile.nextjs
+
+  node_base: &node_base
+    <<: [*base, *node_image]
+    environment:
+      - NODE_ENV=${NODE_ENV:-development}
+    volumes:
+      - ./frontend:/app:cached
+    working_dir: /app
+
+services:
+  frontend:
+    <<: *node_base
+    # command: dev
+    # entrypoint: yarn
+    tmpfs:
+      - /tmp:exec,mode=777
+  shell:
+    <<: *node_base
+    tmpfs:
+      - /tmp:exec,mode=777
+
+networks:
+  default:
+    external: true
+    name: landobedrocknextjs_default
