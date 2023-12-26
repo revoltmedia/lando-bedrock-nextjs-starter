@@ -10,19 +10,19 @@ A starter with Lando & Bedrock configured to work together.
  * [Lando](https://docs.lando.dev/getting-started/)
    * _Suggestion_: [Trust the Lando CA](https://docs.lando.dev/core/v3/security.html#trusting-the-ca) to avoid HTTPS errors.
 
-### Setup config preferences
+### Initialize Backend (Bedrock)
 
- 1. Copy the `.env` file and edit with your preferences.
-    `cp .env.example .env`
- 2. Generate WP salt keys for your `.env` file. A handy tool for this is the [roots.io salt generator](https://roots.io/salts.html)
- 3. _Suggestion_: change the name of your site in the following locatons:
-    * `.lando.yml`:
-      * `name`
-      * `proxy`: `pma` URL subdomain
-    * `.env` `WP_HOME` URL subdomain
- 4. Add a theme! For example, `twentytwentyfour` via composer that looks like `lando composer require wpackagist-theme/twentytwentyfour`
- 5. Run `lando start`
- 6. Access your local instance at the URL provided after the start command finishes.
+The `init-backend` tooling will generate the bedrock project under `/backend` and generate a `.env` file based on the `.env.example` with randomized salts.
+
+ 1. `lando init-backend`
+ 2. Answer the prompts
+ 3. Run `lando start`
+ 4. Access your local instance at the URL provided after the start command finishes.
+
+### Cleaning Up
+
+If you want to clean up the starter specific files once your project is set up, 
+from the project root run: `rm -rf starter-scripts .lando-base.yml`
 
  ## Notes
 
@@ -48,7 +48,7 @@ A starter with Lando & Bedrock configured to work together.
 Many S3 compatible plugins exist for WP. While it has drawbacks, it's a good idea to do something like this to separate the file uploads from the core code. The [S3-Uploads](https://github.com/humanmade/S3-Uploads) plugin is great for use with Bedrock / composer.
 
   * Their install steps can be used modifying them to `lando composer ...` or `lando wp ...`
-  * Their `wp-config.php` lines should be placed in `config/applicaton.php`
+  * Their `wp-config.php` lines should be placed in `backend/config/applicaton.php`
     * Change `define` to `Config::define`
     * Replace the values with environment variables `env('S3_UPLOADS_BUCKET')` 
       ```
