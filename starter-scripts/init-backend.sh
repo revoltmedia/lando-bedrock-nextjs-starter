@@ -22,7 +22,7 @@ if yes_or_no; then
     mkdir "$BACKEND_DIR"
     cd "$BACKEND_DIR" || echo "Error: $BACKEND_DIR wasn't created."
     composer create-project roots/bedrock
-    
+
     if [ -d "$BACKEND_DIR/bedrock" ]; then
         SOURCE_DIR="$BACKEND_DIR/bedrock"
         
@@ -37,7 +37,4 @@ if yes_or_no; then
 fi
 
 
-printf 'A .env file will now be created with salts generated. \n
-Press ctrl+c to abort or enter to continue.'
-
-read -r ans
+printf 'To generate a .env file run lando generate-env.'
