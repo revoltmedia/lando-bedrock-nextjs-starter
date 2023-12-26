@@ -4,7 +4,7 @@
 # By: Bear at Revolt Media - https://github.com/chaoticbear
 # Project: https://github.com/revoltmedia/lando-bedrock-nextjs-starter
 
-FRONTEND_DIR='frontend'
+FRONTEND_DIR='/app/frontend'
 
 yes_or_no() {
     while true; do
@@ -21,28 +21,16 @@ read -r PROJECT_NAME
 
 if [ -d "$FRONTEND_DIR" ]; then
     printf '\n
-./%s already exists. \n
+%s already exists. \n
 Would you like to DELETE and recreate it? Otherwise this script exits. \n
-THIS WILL DELETE ANY WORK YOU'\''VE DONE IN ./%s!!!\n
+THIS WILL DELETE ANY WORK YOU'\''VE DONE IN %s!!!\n
 [y/n]' "$FRONTEND_DIR" "$FRONTEND_DIR"
     if yes_or_no; then
-        rm -rf ./$FRONTEND_DIR
+        rm -rf $FRONTEND_DIR
 
         if [ -d "$FRONTEND_DIR" ]; then
             printf '\n
-Deleting with your user account didn'\''t work. \n
-Try again using lando as root?\n
-[y/n]';
-            if yes_or_no; then
-                # Use lando to remove directory because some files may be owned by root.
-                # Alternative would be to require sudo.
-                lando ssh -s frontend -c "rm -rf /app/$FRONTEND_DIR" -u root
-            fi
-        fi
-
-        if [ -d "$FRONTEND_DIR" ]; then
-            printf '\n
-Failed to delete ./%s\n
+Failed to delete %s\n
 Most likely continuing will lead to more errors.\n
 Would you like to continue anyway?\n
 [y/n]' "$FRONTEND_DIR"
@@ -55,32 +43,25 @@ Would you like to continue anyway?\n
     fi
 fi
 
-printf 'Create NextJS project named %s in /%s?\n
+printf 'Create NextJS project named %s in %s?\n
 [y/n]' "$PROJECT_NAME" "$FRONTEND_DIR"
 if yes_or_no; then
-    mkdir frontend
-    sh -c "lando yarn create next-app $PROJECT_NAME"
+    
+    su -c "mkdir $FRONTEND_DIR && 
+        cd $FRONTEND_DIR && 
+        yarn create next-app $PROJECT_NAME" node
 
     if [ -d "$FRONTEND_DIR/$PROJECT_NAME" ]; then
-        SOURCE_DIR="./$FRONTEND_DIR/$PROJECT_NAME"
+        SOURCE_DIR="$FRONTEND_DIR/$PROJECT_NAME"
         
-        echo "Moving contents of $SOURCE_DIR to ./$FRONTEND_DIR"
+        echo "Moving contents of $SOURCE_DIR to $FRONTEND_DIR"
 
-        mv "$SOURCE_DIR"/* "./$FRONTEND_DIR/"
-        mv "$SOURCE_DIR"/.* "./$FRONTEND_DIR/"
+        find "$SOURCE_DIR" -mindepth 1 -maxdepth 1 -exec mv -t $FRONTEND_DIR -- {} +
         rm -rf "$SOURCE_DIR"
     else
         echo "The NextJS project wasn't created"
         exit;
     fi
-else
-    exit;
-fi
-
-printf 'Build / rebuild lando?\n
-    [y/n]'
-if yes_or_no; then
-    lando rebuild -y
 else
     exit;
 fi
