@@ -1,5 +1,11 @@
+tooling:
   init-backend:
     service: appserver
     dir: /app/starter-scripts
     cmd:
       - /bin/bash ./init-backend.sh
+  init-frontend:
+    service: frontend
+    dir: /app/starter-scripts
+    cmd: /bin/sh ./init-frontend.sh
+    user: root
