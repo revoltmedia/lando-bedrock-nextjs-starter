@@ -23,7 +23,7 @@ The `init-backend` and `generate-env` tooling will generate the bedrock project 
  3. Run `lando start`
  4. Access your local instance at the URL provided after the start command finishes.
  
-### Initialize Frontend
+### Initialize Frontend (NextJS)
 
  1. `lando init-frontend`
  2. Answer the prompts
@@ -39,6 +39,7 @@ Note that this will remove the `init-backend` tooling.
 
  * `generate-env` Generates a `.env` file based on the `.env.example`
  * `init-backend` Generates a Bedrock project under the `/backend` directory
+ * `init-frontend` Generates a NextJS project under the `/frontend` directory
 
 ## Notes
 
@@ -53,7 +54,6 @@ Note that this will remove the `init-backend` tooling.
 
 ## Todo
 
- - [ ] Setup initial NextJS project
  - [ ] Create/Add blank theme placeholder for NextJS site
  - [ ] Add basic plugins neeeded to connect NextJS
     * WP-GraphQL
