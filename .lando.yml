@@ -6,7 +6,7 @@ proxy:
 env_file:
   - .env
 config:
-  webroot: web
+  webroot: backend/web
 services:
   appserver:
     type: php:8.2

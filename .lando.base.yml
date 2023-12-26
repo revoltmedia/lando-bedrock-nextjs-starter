@@ -1,0 +1,13 @@
+# services:
+#   appserver:
+#       type: php:8.2
+#       build_as_root: /bin/sh ./init-appserver-setup-tooling.sh
+tooling:
+  init-backend:
+    service: appserver
+    dir: /app/starter-scripts
+    cmd:
+      - /bin/bash ./init-backend.sh
+      - wp package install aaemnnosttv/wp-cli-dotenv-command:^2.0
+      - cd /app && wp dotenv init --template=.env.example --with-salts
+
