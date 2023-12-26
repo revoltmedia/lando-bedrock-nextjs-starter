@@ -62,10 +62,13 @@ if yes_or_no; then
     sh -c "lando yarn create next-app $PROJECT_NAME"
 
     if [ -d "$FRONTEND_DIR/$PROJECT_NAME" ]; then
-        echo "Moving contents of ./$FRONTEND_DIR/$PROJECT_NAME to ./$FRONTEND_DIR"
-        mv "./$FRONTEND_DIR/$PROJECT_NAME/*" "./$FRONTEND_DIR/"
-        mv "./$FRONTEND_DIR/$PROJECT_NAME/.*" "./$FRONTEND_DIR/"
-        rm -rf "./$FRONTEND_DIR/$PROJECT_NAME"
+        SOURCE_DIR="./$FRONTEND_DIR/$PROJECT_NAME"
+        
+        echo "Moving contents of $SOURCE_DIR to ./$FRONTEND_DIR"
+
+        mv "$SOURCE_DIR"/* "./$FRONTEND_DIR/"
+        mv "$SOURCE_DIR"/.* "./$FRONTEND_DIR/"
+        rm -rf "$SOURCE_DIR"
     else
         echo "The NextJS project wasn't created"
         exit;
