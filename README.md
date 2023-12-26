@@ -12,10 +12,10 @@ A starter with Lando & Bedrock configured to work together.
 
 ### Initialize Backend (Bedrock)
 
-The `init-backend` tooling will generate the bedrock project under `/backend` and generate a `.env` file based on the `.env.example` with randomized salts.
+The `init-backend` and `generate-env` tooling will generate the bedrock project under `/backend` and generate a `.env` file based on the `.env.example` with randomized salts.
 
- 1. `lando init-backend`
- 2. Answer the prompts
+ 1. Run `lando init-backend`
+ 2. Run `lando generate-env`
  3. Run `lando start`
  4. Access your local instance at the URL provided after the start command finishes.
 
@@ -24,7 +24,15 @@ The `init-backend` tooling will generate the bedrock project under `/backend` an
 If you want to clean up the starter specific files once your project is set up, 
 from the project root run: `rm -rf starter-scripts .lando-base.yml`
 
- ## Notes
+Note that this will remove the `init-backend` tooling.
+
+## Tooling
+
+ * `generate-env` Generates a `.env` file based on the `.env.example`
+ * `init-backend` Generates a Bedrock project under the `/backend` directory
+
+
+## Notes
 
   * `wp-admin` is under `/wp/` at `https://lando-bedrock.lndo.site/wp/wp-admin`
   * `composer ...` commands can be run via `lando composer ...`
