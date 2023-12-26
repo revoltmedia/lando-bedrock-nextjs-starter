@@ -1,0 +1,5 @@
+  init-backend:
+    service: appserver
+    dir: /app/starter-scripts
+    cmd:
+      - /bin/bash ./init-backend.sh

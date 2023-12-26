@@ -6,7 +6,7 @@ proxy:
 env_file:
   - .env
 config:
-  webroot: web
+  webroot: backend/web
 services:
   appserver:
     type: php:8.2
@@ -16,3 +16,10 @@ services:
   database:
     type: mariadb
     portforward: true
+tooling:
+  generate-env:
+    service: appserver
+    dir: /app
+    cmd:
+      - wp package install aaemnnosttv/wp-cli-dotenv-command:^2.0
+      - wp dotenv init --template=.env.example --with-salts

@@ -28,3 +28,6 @@ wp-cli.local.yml
 
 # VS Code
 *.code-workspace
+
+# Lando
+.lando.local.yml
