@@ -8,9 +8,7 @@ x-shared-config:
     user: "1000:1001"
 
   node_image: &node_image
-    build:
-      context: ./frontend
-      dockerfile: ../docker/Dockerfile.nextjs
+    image: node:18-alpine
 
   node_base: &node_base
     <<: [*base, *node_image]
@@ -23,8 +21,8 @@ x-shared-config:
 services:
   frontend:
     <<: *node_base
-    # command: dev
-    # entrypoint: yarn
+    command: dev
+    entrypoint: yarn
     tmpfs:
       - /tmp:exec,mode=777
   shell:
