@@ -1,0 +1,6 @@
+tooling:
+  init-frontend:
+    service: frontend
+    dir: /app/starter-scripts
+    cmd: /bin/sh ./init-frontend.sh
+    user: root
