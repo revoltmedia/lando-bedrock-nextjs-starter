@@ -26,6 +26,16 @@ Forked from [lando-bedrock-starter](https://github.com/revoltmedia/lando-bedrock
  5. Run `lando start`
  6. Access your local instance at the URL provided after the start command finishes.
 
+### Initialize Frontend
+
+ 1. `lando init-frontend`
+ 2. Answer the prompts
+
+### Cleaning Up
+
+If you want to clean up the starter specific files once your project is set up, 
+from the project root run: `rm -rf starter-scripts .lando-base.yml`
+
  ## Notes
 
   * `wp-admin` is under `/wp/` at `https://lando-bedrock-nextjs.lndo.site/wp/wp-admin`
