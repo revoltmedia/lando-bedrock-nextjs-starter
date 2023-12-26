@@ -22,6 +22,11 @@ The `init-backend` and `generate-env` tooling will generate the bedrock project 
  2. Run `lando generate-env`
  3. Run `lando start`
  4. Access your local instance at the URL provided after the start command finishes.
+ 
+### Initialize Frontend
+
+ 1. `lando init-frontend`
+ 2. Answer the prompts
 
 ### Cleaning Up
 
@@ -34,7 +39,6 @@ Note that this will remove the `init-backend` tooling.
 
  * `generate-env` Generates a `.env` file based on the `.env.example`
  * `init-backend` Generates a Bedrock project under the `/backend` directory
-
 
 ## Notes
 
