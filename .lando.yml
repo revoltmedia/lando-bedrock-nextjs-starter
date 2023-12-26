@@ -13,6 +13,7 @@ services:
   appserver:
     type: php:8.2
   frontend:
+    user: node
     type: node:18
     command: cd /app/frontend && yarn dev
     build:
@@ -28,3 +29,4 @@ tooling:
   yarn:
     service: frontend
     dir: /app/frontend
+    user: node
