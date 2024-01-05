@@ -1,10 +1,10 @@
-name: lando-bedrock-nextjs
+name: revoltmedia
 recipe: wordpress
 proxy:
   pma:
-    - pma.lando-bedrock-nextjs.lndo.site
+    - pma.revoltmedia.lndo.site
   frontend:
-    - frontend.lando-bedrock-nextjs.lndo.site:3000
+    - frontend.revoltmedia.lndo.site:3000
 env_file:
   - .env
 config:
