@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0eec6fc835eb62faf644c2c26f5d9f68",
+    "content-hash": "2031fa2a1c9d2ac48f917eb000906566",
     "packages": [
         {
             "name": "appsero/client",
@@ -1326,6 +1326,24 @@
                 "source": "https://github.com/wp-graphql/wp-graphql/tree/v1.19.0"
             },
             "time": "2023-11-14T22:58:31+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/faustwp",
+            "version": "1.1.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/faustwp/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/faustwp.zip?timestamp=1701885964"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/faustwp/"
         },
         {
             "name": "wpackagist-theme/twentytwentyfour",
