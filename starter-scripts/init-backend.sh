@@ -36,5 +36,11 @@ if yes_or_no; then
     fi
 fi
 
+printf 'Add NextJS/WP Headless related plugins?\n
+[y/n]'
+if yes_or_no; then
+    cd "$BACKEND_DIR" || echo "Error: $BACKEND_DIR wasn't created."
+    composer require wp-graphql/wp-graphql
+fi
 
 printf 'To generate a .env file run lando generate-env.'
