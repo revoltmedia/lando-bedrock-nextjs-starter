@@ -1,10 +1,8 @@
-# Lando-Bedrock-NextJS Starter
+# Revolt Media Marketing Site
 
-***WORK IN PROGRESS***
+A marketing site for Revolt Media Limited.
 
-A starter with Lando, Bedrock & NextJS configured to work together as a static generated site with WordPress backend. 
-
-Forked from [lando-bedrock-starter](https://github.com/revoltmedia/lando-bedrock-starter) with additional configuration for a NextJS frontend.
+Forked from our own starter project [revoltmedia-starter](https://github.com/revoltmedia/revoltmedia-starter)
 
 ## Getting Started
 
@@ -43,7 +41,7 @@ Note that this will remove the `init-backend` tooling.
 
 ## Notes
 
-  * `wp-admin` is under `/wp/` at `https://lando-bedrock-nextjs.lndo.site/wp/wp-admin`
+  * `wp-admin` is under `/wp/` at `https://revoltmedia.lndo.site/wp/wp-admin`
   * `composer ...` commands can be run via `lando composer ...`
 
 ## What did you do here?
